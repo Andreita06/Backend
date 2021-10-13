@@ -32,7 +32,12 @@ class Server {
 
         //Indicar que las solicitudes http se trabajará en JSON
         this.app.use(express.json());
-        this.app.use(cors());
+        this.app.use(cors(
+            {
+              origin:"*",
+              methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
+            }
+          ));
 
         // Rutas
         const router = express.Router();
