@@ -21,7 +21,7 @@ class MascotaRouter{
         this.router.get("/mascota/:id", objMascotaController.consultarMascotaId);
         this.router.get("/mascota_usuario/:id", objMascotaController.consultarMascotaId_usuario);
         this.router.get("/mascota", objMascotaController.getMascotas);
-        this.router.put("/mascota", objMascotaController.setMascotas);
+        this.router.put("/mascota/:id", objMascotaController.setMascotas);
         this.router.delete("/mascota/:id", objMascotaController.deleteMascotas);
     }
 
