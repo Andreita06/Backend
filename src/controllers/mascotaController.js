@@ -55,11 +55,13 @@ class MascotasController {
     // Actualizar Mascota
     setMascotas(req, res) {
         //Capturar los datos del cuerpo de la petición
-        let { id, tipo_mascota, nombre_mascota, edad_mascota, raza_mascota, alergias, desc_alergia } = req.body;
+        let { usuario_id, tipo_mascota, nombre_mascota, edad_mascota, raza_mascota, alergias, desc_alergia } = req.body;
         //Crear un objeto con los datos capturados del cuerpo de la petición. Encargado de actualizar en el método update
         let objMascotas = {
-            tipo_mascota, nombre_mascota, edad_mascota, raza_mascota, alergias, desc_alergia
+            usuario_id, tipo_mascota, nombre_mascota, edad_mascota, raza_mascota, alergias, desc_alergia
         }
+        let id = req.params.id
+        
         //Actualizar una mascotas por ID
         mascotas.findByIdAndUpdate(id, { $set: objMascotas }, (error, data) => {
             if (error) {
